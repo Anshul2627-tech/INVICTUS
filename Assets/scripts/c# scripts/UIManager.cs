@@ -21,7 +21,6 @@ public class UIManager : MonoBehaviour
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         
-        // Sab hide karo shuru mein
         blackScreen.gameObject.SetActive(false);
         unconqueredText.gameObject.SetActive(false);
         thinkAgainText.gameObject.SetActive(false);
@@ -51,7 +50,6 @@ public class UIManager : MonoBehaviour
 
     IEnumerator GameOverSequence()
     {
-        // Step 1 - Black screen
         blackScreen.gameObject.SetActive(true);
         blackScreen.color = new Color(0, 0, 0, 0);
 
@@ -65,7 +63,6 @@ public class UIManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
 
-        // Step 2 - "UNCONQUERED?" appear karo
         unconqueredText.gameObject.SetActive(true);
         unconqueredText.color = new Color(1, 0, 0, 0);
 
@@ -79,7 +76,6 @@ public class UIManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1f);
 
-        // Step 3 - "THINK AGAIN!" appear karo
         thinkAgainText.gameObject.SetActive(true);
         thinkAgainText.color = new Color(1, 0, 0, 0);
 
