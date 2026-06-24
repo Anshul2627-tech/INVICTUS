@@ -4,7 +4,7 @@ using System.Collections;
 public class WaveSpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public GameObject spawnFireEffect; // fire prefab
+    public GameObject spawnFireEffect; 
     public Transform[] spawnPoints;
     public float timeBetweenWaves = 5f;
     public UIManager uiManager;
@@ -36,16 +36,14 @@ public class WaveSpawner : MonoBehaviour
         {
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
             
-            // Fire effect spawn karo
             if (spawnFireEffect != null)
             {
                 GameObject fire = Instantiate(spawnFireEffect, spawnPoint.position, Quaternion.identity);
-                Destroy(fire, 2f); // 2 sec baad fire destroy
+                Destroy(fire, 2f); 
             }
 
             yield return new WaitForSeconds(0.5f);
 
-            // Enemy spawn karo
             Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
 
             yield return new WaitForSeconds(0.5f);
