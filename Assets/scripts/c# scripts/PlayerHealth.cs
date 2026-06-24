@@ -31,6 +31,6 @@ public class PlayerHealth : MonoBehaviour
             uiManager.ShowGameOver();
         
         Debug.Log("GAME OVER!");
-        Time.timeScale = 0f; // game pause ho jayega
+        Time.timeScale = 0f; 
     }
 }
