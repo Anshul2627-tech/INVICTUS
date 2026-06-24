@@ -27,7 +27,6 @@ public class PlayerCombat : MonoBehaviour
         if (Time.time - lastPunchTime < punchCooldown) return;
         lastPunchTime = Time.time;
 
-        // Check all nearby enemies in range
         Collider[] hits = Physics.OverlapSphere(transform.position, punchRange);
         foreach (Collider hit in hits)
         {
