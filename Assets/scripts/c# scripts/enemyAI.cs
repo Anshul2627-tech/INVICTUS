@@ -52,7 +52,6 @@ public class EnemyAI : MonoBehaviour
     health -= damage;
     if (health <= 0)
     {
-        // Score add karo
         UIManager uiManager = FindAnyObjectByType<UIManager>();
         if (uiManager != null)
             uiManager.AddScore(10);
